@@ -19,10 +19,11 @@ public class Logger {
         case error
         case important
         case warning
+        case notice
         case success
         case info
-        case debug
         case verbose
+        case debug
 
         public static func < (a: LogLevel, b: LogLevel) -> Bool {
             return a.rawValue < b.rawValue
@@ -35,7 +36,7 @@ public class Logger {
     #if DEBUG
     public static var logLevel: LogLevel = .debug
     #else
-    public static var logLevel: LogLevel = .important
+    public static var logLevel: LogLevel = .warning
     #endif
 
 
@@ -124,6 +125,13 @@ public class Logger {
         }
     }
 
+    /// Log description in Notice level.
+    public static func log(notice message: String) {
+        if logLevel >= .notice {
+            log("[*] \(message)")
+        }
+    }
+
     /// Log description in Success level.
     public static func log(success message: String) {
         if logLevel >= .success {
@@ -138,17 +146,17 @@ public class Logger {
         }
     }
 
-    /// Log description in Debug level.
-    public static func log(debug message: String) {
-        if logLevel >= .debug {
-            log("[>] \(message)")
-        }
-    }
-
     /// Log description in Verbose level.
     public static func log(verbose message: String) {
         if logLevel >= .verbose {
-            log("[ ] \(message)")
+            log("[ ] \(message)".white)
+        }
+    }
+
+    /// Log description in Debug level.
+    public static func log(debug message: String) {
+        if logLevel >= .debug {
+            log("[>] \(message)".white)
         }
     }
 }
