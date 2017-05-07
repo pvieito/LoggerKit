@@ -128,7 +128,7 @@ public class Logger {
     /// Log description in Notice level.
     public static func log(notice message: String) {
         if logLevel >= .notice {
-            log("[*] \(message)")
+            log("[!] \(message)")
         }
     }
 
