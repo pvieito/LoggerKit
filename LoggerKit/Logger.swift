@@ -111,6 +111,13 @@ public class Logger {
         }
     }
 
+    /// Convenience function to log an Error.
+    public static func log(error: Error) {
+        if logLevel >= .error {
+            log("[x] \(error.localizedDescription)".red)
+        }
+    }
+
     /// Log description in Important level.
     public static func log(important message: String) {
         if logLevel >= .important {
