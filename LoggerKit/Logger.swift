@@ -17,8 +17,8 @@ public class Logger {
     public enum LogLevel: Int, Comparable {
         case silence = 0
         case error
-        case important
         case warning
+        case important
         case notice
         case success
         case info
@@ -77,7 +77,7 @@ public class Logger {
     ///   - domain: Domain of the action.
     ///   - key: Specific part of the domain of the action.
     ///   - data: Data transferred during the action.
-    public static func log(action mode: LogAction, domain: String, key: String, data: String = "--") {
+    public static func log(action mode: LogAction, domain: CustomStringConvertible, key: CustomStringConvertible, data: CustomStringConvertible = "--") {
 
         switch mode {
         case .read:
@@ -95,73 +95,76 @@ public class Logger {
     // MARK: Log Functions
 
     /// Private general log function. The rest of Log functions should call this one.
-    private static func log(_ message: String) {
+    private static func log(_ message: CustomStringConvertible) {
         switch Logger.logMode {
         case .logger:
-            NSLog(message.replacingOccurrences(of: "%", with: "％"))
+            NSLog(message.description.replacingOccurrences(of: "%", with: "％"))
         case .commandLine:
             print(message)
         }
     }
 
     /// Log description in Error level.
-    public static func log(error message: String) {
+    public static func log(error message: CustomStringConvertible) {
         if logLevel >= .error {
             log("[x] \(message)".red)
         }
     }
 
-    /// Convenience function to log an Error.
+    /// Convenience function to log an Error in Error level.
     public static func log(error: Error) {
-        if logLevel >= .error {
-            log("[x] \(error.localizedDescription)".red)
-        }
-    }
-
-    /// Log description in Important level.
-    public static func log(important message: String) {
-        if logLevel >= .important {
-            log("[*] \(message)".bold)
-        }
+        log(error: error.localizedDescription)
     }
 
     /// Log description in Warning level.
-    public static func log(warning message: String) {
+    public static func log(warning message: CustomStringConvertible) {
         if logLevel >= .warning {
             log("[!] \(message)".yellow)
         }
     }
 
+    /// Convenience function to log an Error in Warning level.
+    public static func log(warning: Error) {
+        log(warning: warning.localizedDescription)
+    }
+
+    /// Log description in Important level.
+    public static func log(important message: CustomStringConvertible) {
+        if logLevel >= .important {
+            log("[*] \(message)".bold)
+        }
+    }
+
     /// Log description in Notice level.
-    public static func log(notice message: String) {
+    public static func log(notice message: CustomStringConvertible) {
         if logLevel >= .notice {
             log("[!] \(message)")
         }
     }
 
     /// Log description in Success level.
-    public static func log(success message: String) {
+    public static func log(success message: CustomStringConvertible) {
         if logLevel >= .success {
             log("[*] \(message)".green)
         }
     }
 
     /// Log description in Info level.
-    public static func log(info message: String) {
+    public static func log(info message: CustomStringConvertible) {
         if logLevel >= .info {
             log("[ ] \(message)".white)
         }
     }
 
     /// Log description in Verbose level.
-    public static func log(verbose message: String) {
+    public static func log(verbose message: CustomStringConvertible) {
         if logLevel >= .verbose {
             log("[ ] \(message)".white)
         }
     }
 
     /// Log description in Debug level.
-    public static func log(debug message: String) {
+    public static func log(debug message: CustomStringConvertible) {
         if logLevel >= .debug {
             log("[>] \(message)".white)
         }
