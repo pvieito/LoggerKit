@@ -77,17 +77,17 @@ public class Logger {
     ///   - domain: Domain of the action.
     ///   - key: Specific part of the domain of the action.
     ///   - data: Data transferred during the action.
-    public static func log(action mode: LogAction, domain: CustomStringConvertible, key: CustomStringConvertible, data: CustomStringConvertible = "--") {
+    public static func log(action mode: LogAction, domain: CustomStringConvertible, key: CustomStringConvertible, data: CustomStringConvertible? = nil) {
 
         switch mode {
         case .read:
-            log(debug: "\(domain).\(key) -> \(data)")
+            log(debug: "\(domain).\(key) -> \(data ?? "--")")
         case .write:
-            log(debug: "\(domain).\(key) <- \(data)")
+            log(debug: "\(domain).\(key) <- \(data ?? "--")")
         case .delete:
-            log(debug: "\(domain).\(key) xx \(data)")
+            log(debug: "\(domain).\(key) xx \(data ?? "--")")
         case .reset:
-            log(debug: "\(domain).\(key) ** \(data)")
+            log(debug: "\(domain).\(key) ** \(data ?? "--")")
         }
     }
 
