@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA912BF61EE96C94002DD639 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABBD9A91E5761D000AE5B46 /* Logger.swift */; };
+		AA912BF71EE96C98002DD639 /* BackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABBD9AB1E5761D000AE5B46 /* BackgroundColor.swift */; };
+		AA912BF81EE96C98002DD639 /* CodesParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABBD9AC1E5761D000AE5B46 /* CodesParser.swift */; };
+		AA912BF91EE96C98002DD639 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABBD9AD1E5761D000AE5B46 /* Color.swift */; };
+		AA912BFA1EE96C98002DD639 /* ControlCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABBD9AE1E5761D000AE5B46 /* ControlCode.swift */; };
+		AA912BFB1EE96C98002DD639 /* ModesExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABBD9AF1E5761D000AE5B46 /* ModesExtractor.swift */; };
+		AA912BFC1EE96C98002DD639 /* OutputTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABBD9B01E5761D000AE5B46 /* OutputTarget.swift */; };
+		AA912BFD1EE96C98002DD639 /* Rainbow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABBD9B11E5761D000AE5B46 /* Rainbow.swift */; };
+		AA912BFE1EE96C98002DD639 /* String+Rainbow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABBD9B21E5761D000AE5B46 /* String+Rainbow.swift */; };
+		AA912BFF1EE96C98002DD639 /* StringGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABBD9B31E5761D000AE5B46 /* StringGenerator.swift */; };
+		AA912C001EE96C98002DD639 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABBD9B41E5761D000AE5B46 /* Style.swift */; };
+		AA912C011EE96C98002DD639 /* XcodeColorsSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABBD9B51E5761D000AE5B46 /* XcodeColorsSupport.swift */; };
 		AABBD9C91E5761DA00AE5B46 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABBD9A91E5761D000AE5B46 /* Logger.swift */; };
 		AABBD9CA1E5761E000AE5B46 /* BackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABBD9AB1E5761D000AE5B46 /* BackgroundColor.swift */; };
 		AABBD9CB1E5761E000AE5B46 /* CodesParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABBD9AC1E5761D000AE5B46 /* CodesParser.swift */; };
@@ -22,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA912BE01EE96C56002DD639 /* LoggerKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LoggerKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AABBD9A41E5761BD00AE5B46 /* LoggerKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LoggerKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AABBD9A91E5761D000AE5B46 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		AABBD9AB1E5761D000AE5B46 /* BackgroundColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = BackgroundColor.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -40,6 +53,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		AA912BDC1EE96C56002DD639 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AABBD99E1E5761BD00AE5B46 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -63,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				AABBD9A41E5761BD00AE5B46 /* LoggerKit.framework */,
+				AA912BE01EE96C56002DD639 /* LoggerKit.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -106,6 +127,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		AA912BDD1EE96C56002DD639 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AABBD99F1E5761BD00AE5B46 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -116,6 +144,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		AA912BDF1EE96C56002DD639 /* LoggerKitWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA912BE71EE96C56002DD639 /* Build configuration list for PBXNativeTarget "LoggerKitWatch" */;
+			buildPhases = (
+				AA912BDB1EE96C56002DD639 /* Sources */,
+				AA912BDC1EE96C56002DD639 /* Frameworks */,
+				AA912BDD1EE96C56002DD639 /* Headers */,
+				AA912BDE1EE96C56002DD639 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LoggerKitWatch;
+			productName = LoggerKitWatch;
+			productReference = AA912BE01EE96C56002DD639 /* LoggerKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		AABBD99C1E5761BD00AE5B46 /* LoggerKit */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = AABBD9A11E5761BD00AE5B46 /* Build configuration list for PBXNativeTarget "LoggerKit" */;
@@ -143,10 +189,13 @@
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Pedro José Pereira Vieito";
 				TargetAttributes = {
-					AABBD99C1E5761BD00AE5B46 = {
+					AA912BDF1EE96C56002DD639 = {
+						CreatedOnToolsVersion = 9.0;
 						DevelopmentTeam = T7MC635YG5;
+					};
+					AABBD99C1E5761BD00AE5B46 = {
 						LastSwiftMigration = 0900;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -163,11 +212,19 @@
 			projectRoot = "";
 			targets = (
 				AABBD99C1E5761BD00AE5B46 /* LoggerKit */,
+				AA912BDF1EE96C56002DD639 /* LoggerKitWatch */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		AA912BDE1EE96C56002DD639 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AABBD9A01E5761BD00AE5B46 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -178,6 +235,25 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		AA912BDB1EE96C56002DD639 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA912BFF1EE96C98002DD639 /* StringGenerator.swift in Sources */,
+				AA912BFE1EE96C98002DD639 /* String+Rainbow.swift in Sources */,
+				AA912BF61EE96C94002DD639 /* Logger.swift in Sources */,
+				AA912BFB1EE96C98002DD639 /* ModesExtractor.swift in Sources */,
+				AA912BFD1EE96C98002DD639 /* Rainbow.swift in Sources */,
+				AA912BF91EE96C98002DD639 /* Color.swift in Sources */,
+				AA912BFA1EE96C98002DD639 /* ControlCode.swift in Sources */,
+				AA912BFC1EE96C98002DD639 /* OutputTarget.swift in Sources */,
+				AA912BF71EE96C98002DD639 /* BackgroundColor.swift in Sources */,
+				AA912C011EE96C98002DD639 /* XcodeColorsSupport.swift in Sources */,
+				AA912BF81EE96C98002DD639 /* CodesParser.swift in Sources */,
+				AA912C001EE96C98002DD639 /* Style.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AABBD99D1E5761BD00AE5B46 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -200,6 +276,61 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		AA912BE51EE96C56002DD639 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "$(SRCROOT)/LoggerKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pvieito.LoggerKit;
+				PRODUCT_NAME = LoggerKit;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "watchsimulator watchos";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALID_ARCHS = armv7k;
+			};
+			name = Debug;
+		};
+		AA912BE61EE96C56002DD639 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "$(SRCROOT)/LoggerKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pvieito.LoggerKit;
+				PRODUCT_NAME = LoggerKit;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "watchsimulator watchos";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = armv7k;
+			};
+			name = Release;
+		};
 		AABB23261E2E7AFE007B7F68 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -228,7 +359,6 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 3;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -255,13 +385,13 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
+				SUPPORTED_PLATFORMS = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2,3,4";
 				TVOS_DEPLOYMENT_TARGET = 9.0;
-				VALID_ARCHS = "i386 x86_64 arm64 armv7s armv7k armv7";
+				VALID_ARCHS = "i386 x86_64";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
@@ -296,7 +426,6 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 3;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -316,12 +445,12 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
+				SUPPORTED_PLATFORMS = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2,3,4";
 				TVOS_DEPLOYMENT_TARGET = 9.0;
-				VALID_ARCHS = "i386 x86_64 arm64 armv7s armv7k armv7";
+				VALID_ARCHS = "i386 x86_64";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
@@ -334,7 +463,6 @@
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = T7MC635YG5;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 3;
 				FRAMEWORK_VERSION = A;
@@ -343,7 +471,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.pvieito.LoggerKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2,3";
+				VALID_ARCHS = "i386 x86_64 arm64 armv7s armv7";
 			};
 			name = Debug;
 		};
@@ -353,7 +484,6 @@
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = T7MC635YG5;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 3;
 				FRAMEWORK_VERSION = A;
@@ -362,12 +492,24 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.pvieito.LoggerKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator";
+				TARGETED_DEVICE_FAMILY = "1,2,3";
+				VALID_ARCHS = "i386 x86_64 arm64 armv7s armv7";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		AA912BE71EE96C56002DD639 /* Build configuration list for PBXNativeTarget "LoggerKitWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA912BE51EE96C56002DD639 /* Debug */,
+				AA912BE61EE96C56002DD639 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		AABB231A1E2E7AFE007B7F68 /* Build configuration list for PBXProject "LoggerKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
