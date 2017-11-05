@@ -46,7 +46,7 @@ Output target of Rainbow.
 - Console: A valid console is detected connected.
 - XcodeColors: Used in Xcode with XcodeColors enabled.
 */
-internal  enum OutputTarget {
+internal enum OutputTarget {
     case unknown
     case console
     case xcodeColors

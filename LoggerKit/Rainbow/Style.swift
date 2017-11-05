@@ -25,7 +25,7 @@
 //  THE SOFTWARE.
 
 /// Valid styles to use in `Rainbow`.
-internal  enum Style: UInt8, ModeCode {
+internal enum Style: UInt8, ModeCode {
     case `default` = 0
     case bold = 1
     case dim = 2
@@ -34,7 +34,7 @@ internal  enum Style: UInt8, ModeCode {
     case blink = 5
     case swap = 7
     
-    internal  var value: UInt8 {
+    internal var value: UInt8 {
         return rawValue
     }
 }

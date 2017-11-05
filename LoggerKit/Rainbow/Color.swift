@@ -25,7 +25,7 @@
 //  THE SOFTWARE.
 
 /// Valid text colors to use in `Rainbow`.
-internal  enum Color: UInt8, ModeCode {
+internal enum Color: UInt8, ModeCode {
     case black = 30
     case red
     case green
@@ -44,7 +44,7 @@ internal  enum Color: UInt8, ModeCode {
     case lightCyan
     case lightWhite
     
-    internal  var value: UInt8 {
+    internal var value: UInt8 {
         return rawValue
     }
 }

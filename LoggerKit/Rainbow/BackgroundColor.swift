@@ -25,7 +25,7 @@
 //  THE SOFTWARE.
 
 /// Valid background colors to use in `Rainbow`.
-internal  enum BackgroundColor: UInt8, ModeCode {
+internal enum BackgroundColor: UInt8, ModeCode {
     case black = 40
     case red
     case green
@@ -36,7 +36,7 @@ internal  enum BackgroundColor: UInt8, ModeCode {
     case white
     case `default` = 49
     
-    internal  var value: UInt8 {
+    internal var value: UInt8 {
         return rawValue
     }
 }
