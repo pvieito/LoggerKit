@@ -100,7 +100,9 @@ public class Logger {
         case .logger:
             NSLog(message.description.replacingOccurrences(of: "%", with: "％"))
         case .commandLine:
-            print(message)
+            if let messageData = "\(message.description)\n".data(using: .utf8) {
+                FileHandle.standardError.write(messageData)
+            }
         }
     }
 
