@@ -44,8 +44,8 @@ public class Logger {
 
     /// Possible modes to log.
     ///
-    /// - logger: The messages are sended to the System Log and printed with a timestamp in the Standard Output.
-    /// - commandLine: The messages are printed in the Standard Output with colors.
+    /// - logger: The messages are sended to the System Log and printed with a timestamp in the Standard Error.
+    /// - commandLine: The messages are printed in the Standard Error with colors.
     public enum LogMode: Int {
         case logger
         case commandLine
