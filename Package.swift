@@ -1,4 +1,10 @@
-// swift-tools-version:3.1
+//
+//  Logger.swift
+//  LoggerKit
+//
+//  Created by Pedro José Pereira Vieito on 15/1/17.
+//  Copyright © 2017 Pedro José Pereira Vieito. All rights reserved.
+//
 
 import PackageDescription
 
