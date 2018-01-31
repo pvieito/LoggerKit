@@ -4,7 +4,7 @@
 //
 //  Created by Wei Wang on 15/12/22.
 //
-//  Copyright (c) 2015 Wei Wang <onevcat@gmail.com>
+//  Copyright (c) 2018 Wei Wang <onevcat@gmail.com>
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -73,9 +73,17 @@ internal struct Rainbow {
         
         switch outputTarget {
         case .xcodeColors:
-            return XcodeColorsStringGenerator().generate(withStringColor: color, backgroundColor: backgroundColor, styles: styles, text: text)
+            return XcodeColorsStringGenerator()
+                .generate(withStringColor: color,
+                          backgroundColor: backgroundColor,
+                          styles: styles,
+                          text: text)
         case .console:
-            return ConsoleStringGenerator().generate(withStringColor: color, backgroundColor: backgroundColor, styles: styles, text: text)
+            return ConsoleStringGenerator()
+                .generate(withStringColor: color,
+                          backgroundColor: backgroundColor,
+                          styles: styles,
+                          text: text)
         case .unknown:
             return text
         }
