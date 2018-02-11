@@ -6,8 +6,7 @@ import PackageDescription
 let package = Package(
     name: "LoggerKit",
     products: [
-        .library(name: "LoggerKit", type: .dynamic, targets: ["LoggerKit"]),
-        .library(name: "LoggerKit", type: .static, targets: ["LoggerKit"])
+        .library(name: "LoggerKit", targets: ["LoggerKit"]),
     ],
     dependencies: [
 
