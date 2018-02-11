@@ -6,10 +6,10 @@ import PackageDescription
 let package = Package(
     name: "LoggerKit",
     products: [
-        .library(name: "LoggerKit", targets: ["LoggerKit"]),
+        .library(name: "LoggerKit", type: .static, targets: ["LoggerKit"]),
     ],
     dependencies: [
-
+        
     ],
     targets: [
         .target(name: "LoggerKit", dependencies: [], path: "LoggerKit")
