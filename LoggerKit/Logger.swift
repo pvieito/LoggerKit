@@ -21,6 +21,7 @@ public class Logger {
         case important
         case notice
         case success
+        case action
         case info
         case verbose
         case debug
@@ -77,6 +78,7 @@ public class Logger {
     ///   - domain: Domain of the action.
     ///   - key: Specific part of the domain of the action.
     ///   - data: Data transferred during the action.
+    @available(*, deprecated)
     public static func log(action mode: LogAction, domain: CustomStringConvertible, key: CustomStringConvertible, data: CustomStringConvertible? = nil) {
 
         switch mode {
@@ -85,9 +87,9 @@ public class Logger {
         case .write:
             log(debug: "\(domain).\(key) <- \(data ?? "--")")
         case .delete:
-            log(debug: "\(domain).\(key) xx \(data ?? "--")")
+            log(debug: "\(domain).\(key) x \(data ?? "--")")
         case .reset:
-            log(debug: "\(domain).\(key) ** \(data ?? "--")")
+            log(debug: "\(domain).\(key) @ \(data ?? "--")")
         }
     }
 
@@ -148,6 +150,13 @@ public class Logger {
     public static func log(success message: CustomStringConvertible) {
         if logLevel >= .success {
             log("[*] \(message)".green)
+        }
+    }
+    
+    /// Log description in Info level.
+    public static func log(action message: CustomStringConvertible) {
+        if logLevel >= .action {
+            log("[*] \(message)")
         }
     }
 
