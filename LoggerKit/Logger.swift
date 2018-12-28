@@ -114,6 +114,12 @@ public class Logger {
             log("[x] \(message)".red)
         }
     }
+    
+    /// Convenience function to log an Error in Error level and terminate the process.
+    public static func log(fatalError: Error) -> Never {
+        log(error: fatalError.localizedDescription)
+        exit(-1)
+    }
 
     /// Convenience function to log an Error in Error level.
     public static func log(error: Error) {
