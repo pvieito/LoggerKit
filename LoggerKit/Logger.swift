@@ -107,26 +107,31 @@ public class Logger {
             }
         }
     }
+    
+    /// Log message in Error level and terminate the process.
+    public static func log(fatalError: CustomStringConvertible) -> Never {
+        log(error: fatalError)
+        exit(-1)
+    }
+    
+    /// Convenience function to log an Error in Error level and terminate the process.
+    public static func log(fatalError: Error) -> Never {
+        log(fatalError: fatalError.localizedDescription)
+    }
 
-    /// Log description in Error level.
+    /// Log message in Error level.
     public static func log(error message: CustomStringConvertible) {
         if logLevel >= .error {
             log("[x] \(message)".red)
         }
     }
     
-    /// Convenience function to log an Error in Error level and terminate the process.
-    public static func log(fatalError: Error) -> Never {
-        log(error: fatalError.localizedDescription)
-        exit(-1)
-    }
-
     /// Convenience function to log an Error in Error level.
     public static func log(error: Error) {
         log(error: error.localizedDescription)
     }
 
-    /// Log description in Warning level.
+    /// Log message in Warning level.
     public static func log(warning message: CustomStringConvertible) {
         if logLevel >= .warning {
             log("[!] \(message)".yellow)
