@@ -10,7 +10,6 @@ import Foundation
 
 /// Main class of LoggerKit. It allows you to log actions and description with different log levels.
 public class Logger {
-
     // MARK: Log Level
 
     /// Possible levels of the log.
@@ -39,8 +38,9 @@ public class Logger {
     #else
     public static var logLevel: LogLevel = .warning
     #endif
+}
 
-
+extension Logger {
     // MARK: Log Mode
 
     /// Possible modes to log.
@@ -54,46 +54,9 @@ public class Logger {
 
     /// The mode of the Logger.
     public static var logMode: LogMode = .logger
+}
 
-
-    // MARK: Log Action
-
-    /// Action to log.
-    ///
-    /// - read: Read action.
-    /// - write: Write action.
-    /// - delete: Delete action.
-    /// - reset: Reset or initialize action.
-    public enum LogAction: Int {
-        case read
-        case write
-        case delete
-        case reset
-    }
-
-    /// Log action in Debug level.
-    ///
-    /// - Parameters:
-    ///   - mode: Action mode.
-    ///   - domain: Domain of the action.
-    ///   - key: Specific part of the domain of the action.
-    ///   - data: Data transferred during the action.
-    @available(*, deprecated)
-    public static func log(action mode: LogAction, domain: CustomStringConvertible, key: CustomStringConvertible, data: CustomStringConvertible? = nil) {
-
-        switch mode {
-        case .read:
-            log(debug: "\(domain).\(key) -> \(data ?? "--")")
-        case .write:
-            log(debug: "\(domain).\(key) <- \(data ?? "--")")
-        case .delete:
-            log(debug: "\(domain).\(key) x \(data ?? "--")")
-        case .reset:
-            log(debug: "\(domain).\(key) @ \(data ?? "--")")
-        }
-    }
-
-
+extension Logger {
     // MARK: Log Functions
 
     /// Private general log function. The rest of Log functions should call this one.
@@ -189,6 +152,54 @@ public class Logger {
     public static func log(debug message: CustomStringConvertible) {
         if logLevel >= .debug {
             log("[>] \(message)".white)
+        }
+    }
+}
+
+extension Logger {
+    /// Log empty line.
+    public static func logEmptyLine() {
+        if logLevel >= .error {
+            log("")
+        }
+    }
+}
+
+@available(*, deprecated)
+extension Logger {
+    // MARK: Log Action
+    
+    /// Action to log.
+    ///
+    /// - read: Read action.
+    /// - write: Write action.
+    /// - delete: Delete action.
+    /// - reset: Reset or initialize action.
+    public enum LogAction: Int {
+        case read
+        case write
+        case delete
+        case reset
+    }
+    
+    /// Log action in Debug level.
+    ///
+    /// - Parameters:
+    ///   - mode: Action mode.
+    ///   - domain: Domain of the action.
+    ///   - key: Specific part of the domain of the action.
+    ///   - data: Data transferred during the action.
+    public static func log(action mode: LogAction, domain: CustomStringConvertible, key: CustomStringConvertible, data: CustomStringConvertible? = nil) {
+        
+        switch mode {
+        case .read:
+            log(debug: "\(domain).\(key) -> \(data ?? "--")")
+        case .write:
+            log(debug: "\(domain).\(key) <- \(data ?? "--")")
+        case .delete:
+            log(debug: "\(domain).\(key) x \(data ?? "--")")
+        case .reset:
+            log(debug: "\(domain).\(key) @ \(data ?? "--")")
         }
     }
 }
