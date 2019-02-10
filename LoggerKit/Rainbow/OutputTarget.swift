@@ -24,10 +24,12 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-#if os(Linux)
-import Glibc
-#else
+#if canImport(Darwin)
 import Darwin.C
+#elseif canImport(Glibc)
+import Glibc
+#elseif canImport(MSVCRT)
+import MSVCRT
 #endif
 
 private func getEnvValue(_ key: String) -> String? {

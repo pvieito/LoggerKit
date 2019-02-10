@@ -24,8 +24,6 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-import Foundation
-
 /**
  A Mode code represnet a component for colorizing the string.
  It could be a `Color`, a `BackgroundColor` or a `Style`

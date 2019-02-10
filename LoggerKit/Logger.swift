@@ -63,11 +63,10 @@ extension Logger {
     private static func log(_ message: CustomStringConvertible) {
         switch Logger.logMode {
         case .logger:
-            NSLog(message.description.replacingOccurrences(of: "%", with: "％"))
+            NSLog(message.description)
         case .commandLine:
-            if let messageData = "\(message.description)\n".data(using: .utf8) {
-                FileHandle.standardError.write(messageData)
-            }
+            let messageData = Data((message.description + "\n").utf8)
+            FileHandle.standardError.write(messageData)
         }
     }
     
