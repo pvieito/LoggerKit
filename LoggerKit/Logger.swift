@@ -73,7 +73,7 @@ extension Logger {
     /// Log message in Error level and terminate the process.
     public static func log(fatalError: CustomStringConvertible) -> Never {
         log(error: fatalError)
-        exit(-1)
+        exit(1)
     }
     
     /// Convenience function to log an Error in Error level and terminate the process.
