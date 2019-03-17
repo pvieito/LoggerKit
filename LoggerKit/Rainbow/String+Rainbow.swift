@@ -106,10 +106,10 @@ extension String {
         let current = Rainbow.extractModes(for: self)
         if let styles = current.styles {
             var s = styles
-            var index = s.index(of: style)
+            var index = s.firstIndex(of: style)
             while index != nil {
                 s.remove(at: index!)
-                index = s.index(of: style)
+                index = s.firstIndex(of: style)
             }
             return Rainbow.generateString(
                 forColor: current.color,
