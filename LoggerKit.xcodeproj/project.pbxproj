@@ -35,6 +35,7 @@
 
 /* Begin PBXFileReference section */
 		AA912BE01EE96C56002DD639 /* LoggerKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LoggerKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AAA426C1225C01C900F7BC69 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		AABBD9A41E5761BD00AE5B46 /* LoggerKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LoggerKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AABBD9A91E5761D000AE5B46 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		AABBD9AB1E5761D000AE5B46 /* BackgroundColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = BackgroundColor.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -73,6 +74,7 @@
 		AABB23161E2E7AFE007B7F68 = {
 			isa = PBXGroup;
 			children = (
+				AAA426C1225C01C900F7BC69 /* Package.swift */,
 				AABBD9A81E5761D000AE5B46 /* LoggerKit */,
 				AABB23211E2E7AFE007B7F68 /* Products */,
 				AAF74F7E1E8C814C00EA9436 /* Frameworks */,
