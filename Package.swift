@@ -14,6 +14,10 @@ let package = Package(
         .target(
             name: "LoggerKit",
             path: "LoggerKit"
+        ),
+        .testTarget(
+            name: "LoggerKitTests",
+            dependencies: ["LoggerKit"]
         )
     ]
 )

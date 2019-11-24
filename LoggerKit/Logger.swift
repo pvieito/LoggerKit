@@ -13,7 +13,7 @@ public class Logger {
     // MARK: Log Level
 
     /// Possible levels of the log.
-    public enum LogLevel: Int, Comparable {
+    public enum LogLevel: Int, Comparable, CaseIterable {
         case silence = 0
         case error
         case warning
@@ -47,9 +47,10 @@ extension Logger {
     ///
     /// - logger: The messages are sended to the System Log and printed with a timestamp in the Standard Error.
     /// - commandLine: The messages are printed in the Standard Error with colors.
-    public enum LogMode: Int {
+    public enum LogMode {
         case logger
         case commandLine
+        case customLogger((String) -> ())
     }
 
     /// The mode of the Logger.
@@ -65,9 +66,15 @@ extension Logger {
         case .logger:
             NSLog(message.description)
         case .commandLine:
-            let messageData = Data((message.description + "\n").utf8)
-            FileHandle.standardError.write(messageData)
+            log(message, to: FileHandle.standardError)
+        case .customLogger(let customHandler):
+            customHandler(message.description)
         }
+    }
+    
+    private static func log(_ message: CustomStringConvertible, to fileHandle: FileHandle) {
+        let messageData = Data((message.description + "\n").utf8)
+        fileHandle.write(messageData)
     }
     
     /// Log message in Error level and terminate the process.
