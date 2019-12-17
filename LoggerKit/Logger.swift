@@ -84,8 +84,8 @@ extension Logger {
     }
     
     /// Convenience function to log an Error in Error level and terminate the process.
-    public static func log(fatalError: Error) -> Never {
-        log(fatalError: fatalError.localizedDescription)
+    public static func log(fatalError error: Error) -> Never {
+        log(fatalError: error.localizedDescription)
     }
 
     /// Log message in Error level.
@@ -108,8 +108,8 @@ extension Logger {
     }
 
     /// Convenience function to log an Error in Warning level.
-    public static func log(warning: Error) {
-        log(warning: warning.localizedDescription)
+    public static func log(warning error: Error) {
+        log(warning: error.localizedDescription)
     }
 
     /// Log description in Important level.
