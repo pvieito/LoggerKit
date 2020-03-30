@@ -10,9 +10,13 @@ let package = Package(
             targets: ["LoggerKit"]
         )
     ],
+    dependencies: [
+        .package(url: "https://github.com/onevcat/Rainbow", from: "3.0.0")
+    ],
     targets: [
         .target(
             name: "LoggerKit",
+            dependencies: ["Rainbow"],
             path: "LoggerKit"
         ),
         .testTarget(

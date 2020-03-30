@@ -3,36 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA6288A124320C16003B8F65 /* Rainbow in Frameworks */ = {isa = PBXBuildFile; productRef = AA6288A024320C16003B8F65 /* Rainbow */; };
 		AA826718238ADE2C004D6BD8 /* LoggerKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA826717238ADE2C004D6BD8 /* LoggerKitTests.swift */; };
 		AA82671A238ADE2C004D6BD8 /* LoggerKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AABBD9A41E5761BD00AE5B46 /* LoggerKit.framework */; };
 		AA912BF61EE96C94002DD639 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABBD9A91E5761D000AE5B46 /* Logger.swift */; };
-		AA912BF71EE96C98002DD639 /* BackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABBD9AB1E5761D000AE5B46 /* BackgroundColor.swift */; };
-		AA912BF81EE96C98002DD639 /* CodesParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABBD9AC1E5761D000AE5B46 /* CodesParser.swift */; };
-		AA912BF91EE96C98002DD639 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABBD9AD1E5761D000AE5B46 /* Color.swift */; };
-		AA912BFA1EE96C98002DD639 /* ControlCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABBD9AE1E5761D000AE5B46 /* ControlCode.swift */; };
-		AA912BFB1EE96C98002DD639 /* ModesExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABBD9AF1E5761D000AE5B46 /* ModesExtractor.swift */; };
-		AA912BFC1EE96C98002DD639 /* OutputTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABBD9B01E5761D000AE5B46 /* OutputTarget.swift */; };
-		AA912BFD1EE96C98002DD639 /* Rainbow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABBD9B11E5761D000AE5B46 /* Rainbow.swift */; };
-		AA912BFE1EE96C98002DD639 /* String+Rainbow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABBD9B21E5761D000AE5B46 /* String+Rainbow.swift */; };
-		AA912BFF1EE96C98002DD639 /* StringGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABBD9B31E5761D000AE5B46 /* StringGenerator.swift */; };
-		AA912C001EE96C98002DD639 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABBD9B41E5761D000AE5B46 /* Style.swift */; };
-		AA912C011EE96C98002DD639 /* XcodeColorsSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABBD9B51E5761D000AE5B46 /* XcodeColorsSupport.swift */; };
 		AABBD9C91E5761DA00AE5B46 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABBD9A91E5761D000AE5B46 /* Logger.swift */; };
-		AABBD9CA1E5761E000AE5B46 /* BackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABBD9AB1E5761D000AE5B46 /* BackgroundColor.swift */; };
-		AABBD9CB1E5761E000AE5B46 /* CodesParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABBD9AC1E5761D000AE5B46 /* CodesParser.swift */; };
-		AABBD9CC1E5761E000AE5B46 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABBD9AD1E5761D000AE5B46 /* Color.swift */; };
-		AABBD9CD1E5761E000AE5B46 /* ControlCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABBD9AE1E5761D000AE5B46 /* ControlCode.swift */; };
-		AABBD9CE1E5761E000AE5B46 /* ModesExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABBD9AF1E5761D000AE5B46 /* ModesExtractor.swift */; };
-		AABBD9CF1E5761E000AE5B46 /* OutputTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABBD9B01E5761D000AE5B46 /* OutputTarget.swift */; };
-		AABBD9D01E5761E000AE5B46 /* Rainbow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABBD9B11E5761D000AE5B46 /* Rainbow.swift */; };
-		AABBD9D11E5761E000AE5B46 /* String+Rainbow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABBD9B21E5761D000AE5B46 /* String+Rainbow.swift */; };
-		AABBD9D21E5761E000AE5B46 /* StringGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABBD9B31E5761D000AE5B46 /* StringGenerator.swift */; };
-		AABBD9D31E5761E000AE5B46 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABBD9B41E5761D000AE5B46 /* Style.swift */; };
-		AABBD9D41E5761E000AE5B46 /* XcodeColorsSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABBD9B51E5761D000AE5B46 /* XcodeColorsSupport.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,17 +32,6 @@
 		AAA426C1225C01C900F7BC69 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		AABBD9A41E5761BD00AE5B46 /* LoggerKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LoggerKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AABBD9A91E5761D000AE5B46 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
-		AABBD9AB1E5761D000AE5B46 /* BackgroundColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = BackgroundColor.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		AABBD9AC1E5761D000AE5B46 /* CodesParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodesParser.swift; sourceTree = "<group>"; };
-		AABBD9AD1E5761D000AE5B46 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Color.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		AABBD9AE1E5761D000AE5B46 /* ControlCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlCode.swift; sourceTree = "<group>"; };
-		AABBD9AF1E5761D000AE5B46 /* ModesExtractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModesExtractor.swift; sourceTree = "<group>"; };
-		AABBD9B01E5761D000AE5B46 /* OutputTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = OutputTarget.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		AABBD9B11E5761D000AE5B46 /* Rainbow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Rainbow.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		AABBD9B21E5761D000AE5B46 /* String+Rainbow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "String+Rainbow.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		AABBD9B31E5761D000AE5B46 /* StringGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringGenerator.swift; sourceTree = "<group>"; };
-		AABBD9B41E5761D000AE5B46 /* Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
-		AABBD9B51E5761D000AE5B46 /* XcodeColorsSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XcodeColorsSupport.swift; sourceTree = "<group>"; };
 		AABBD9D61E57620700AE5B46 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AAF74F7F1E8C814C00EA9436 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -88,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA6288A124320C16003B8F65 /* Rainbow in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,27 +99,8 @@
 			children = (
 				AABBD9A91E5761D000AE5B46 /* Logger.swift */,
 				AABBD9D61E57620700AE5B46 /* Info.plist */,
-				AABBD9AA1E5761D000AE5B46 /* Rainbow */,
 			);
 			path = LoggerKit;
-			sourceTree = "<group>";
-		};
-		AABBD9AA1E5761D000AE5B46 /* Rainbow */ = {
-			isa = PBXGroup;
-			children = (
-				AABBD9AB1E5761D000AE5B46 /* BackgroundColor.swift */,
-				AABBD9AC1E5761D000AE5B46 /* CodesParser.swift */,
-				AABBD9AD1E5761D000AE5B46 /* Color.swift */,
-				AABBD9AE1E5761D000AE5B46 /* ControlCode.swift */,
-				AABBD9AF1E5761D000AE5B46 /* ModesExtractor.swift */,
-				AABBD9B01E5761D000AE5B46 /* OutputTarget.swift */,
-				AABBD9B11E5761D000AE5B46 /* Rainbow.swift */,
-				AABBD9B21E5761D000AE5B46 /* String+Rainbow.swift */,
-				AABBD9B31E5761D000AE5B46 /* StringGenerator.swift */,
-				AABBD9B41E5761D000AE5B46 /* Style.swift */,
-				AABBD9B51E5761D000AE5B46 /* XcodeColorsSupport.swift */,
-			);
-			path = Rainbow;
 			sourceTree = "<group>";
 		};
 		AAF74F7E1E8C814C00EA9436 /* Frameworks */ = {
@@ -231,6 +181,9 @@
 			dependencies = (
 			);
 			name = LoggerKit;
+			packageProductDependencies = (
+				AA6288A024320C16003B8F65 /* Rainbow */,
+			);
 			productName = LoggerKit;
 			productReference = AABBD9A41E5761BD00AE5B46 /* LoggerKit.framework */;
 			productType = "com.apple.product-type.framework";
@@ -270,6 +223,9 @@
 				Base,
 			);
 			mainGroup = AABB23161E2E7AFE007B7F68;
+			packageReferences = (
+				AA62889F24320C16003B8F65 /* XCRemoteSwiftPackageReference "Rainbow" */,
+			);
 			productRefGroup = AABB23211E2E7AFE007B7F68 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -318,18 +274,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA912BFF1EE96C98002DD639 /* StringGenerator.swift in Sources */,
-				AA912BFE1EE96C98002DD639 /* String+Rainbow.swift in Sources */,
 				AA912BF61EE96C94002DD639 /* Logger.swift in Sources */,
-				AA912BFB1EE96C98002DD639 /* ModesExtractor.swift in Sources */,
-				AA912BFD1EE96C98002DD639 /* Rainbow.swift in Sources */,
-				AA912BF91EE96C98002DD639 /* Color.swift in Sources */,
-				AA912BFA1EE96C98002DD639 /* ControlCode.swift in Sources */,
-				AA912BFC1EE96C98002DD639 /* OutputTarget.swift in Sources */,
-				AA912BF71EE96C98002DD639 /* BackgroundColor.swift in Sources */,
-				AA912C011EE96C98002DD639 /* XcodeColorsSupport.swift in Sources */,
-				AA912BF81EE96C98002DD639 /* CodesParser.swift in Sources */,
-				AA912C001EE96C98002DD639 /* Style.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,18 +282,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AABBD9D21E5761E000AE5B46 /* StringGenerator.swift in Sources */,
-				AABBD9D11E5761E000AE5B46 /* String+Rainbow.swift in Sources */,
 				AABBD9C91E5761DA00AE5B46 /* Logger.swift in Sources */,
-				AABBD9CE1E5761E000AE5B46 /* ModesExtractor.swift in Sources */,
-				AABBD9D01E5761E000AE5B46 /* Rainbow.swift in Sources */,
-				AABBD9CC1E5761E000AE5B46 /* Color.swift in Sources */,
-				AABBD9CD1E5761E000AE5B46 /* ControlCode.swift in Sources */,
-				AABBD9CF1E5761E000AE5B46 /* OutputTarget.swift in Sources */,
-				AABBD9CA1E5761E000AE5B46 /* BackgroundColor.swift in Sources */,
-				AABBD9D41E5761E000AE5B46 /* XcodeColorsSupport.swift in Sources */,
-				AABBD9CB1E5761E000AE5B46 /* CodesParser.swift in Sources */,
-				AABBD9D31E5761E000AE5B46 /* Style.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,7 +309,11 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = Tests/LoggerKitTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.pvieito.LoggerKitTests;
@@ -398,7 +336,11 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = Tests/LoggerKitTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.pvieito.LoggerKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -428,7 +370,11 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "$(SRCROOT)/LoggerKit/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pvieito.LoggerKit;
 				PRODUCT_NAME = LoggerKit;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -458,7 +404,11 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "$(SRCROOT)/LoggerKit/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pvieito.LoggerKit;
 				PRODUCT_NAME = LoggerKit;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -588,7 +538,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2,3,4";
 				TVOS_DEPLOYMENT_TARGET = 9.0;
@@ -611,7 +562,11 @@
 				DYLIB_CURRENT_VERSION = 3;
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = LoggerKit/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pvieito.LoggerKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -637,7 +592,11 @@
 				DYLIB_CURRENT_VERSION = 3;
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = LoggerKit/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pvieito.LoggerKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -689,6 +648,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AA62889F24320C16003B8F65 /* XCRemoteSwiftPackageReference "Rainbow" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Rainbow";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AA6288A024320C16003B8F65 /* Rainbow */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AA62889F24320C16003B8F65 /* XCRemoteSwiftPackageReference "Rainbow" */;
+			productName = Rainbow;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AABB23171E2E7AFE007B7F68 /* Project object */;
 }

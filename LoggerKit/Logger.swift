@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Rainbow
 
 /// Main class of LoggerKit. It allows you to log actions and description with different log levels.
 public class Logger {
