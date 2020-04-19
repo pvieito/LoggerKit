@@ -10,6 +10,7 @@
 		AA6288A124320C16003B8F65 /* Rainbow in Frameworks */ = {isa = PBXBuildFile; productRef = AA6288A024320C16003B8F65 /* Rainbow */; };
 		AA912BF61EE96C94002DD639 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABBD9A91E5761D000AE5B46 /* Logger.swift */; };
 		AABBD9C91E5761DA00AE5B46 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABBD9A91E5761D000AE5B46 /* Logger.swift */; };
+		AAF42AE8244D14F2008F2603 /* Rainbow in Frameworks */ = {isa = PBXBuildFile; productRef = AAF42AE7244D14F2008F2603 /* Rainbow */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAF42AE8244D14F2008F2603 /* Rainbow in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +112,9 @@
 			dependencies = (
 			);
 			name = LoggerKitWatch;
+			packageProductDependencies = (
+				AAF42AE7244D14F2008F2603 /* Rainbow */,
+			);
 			productName = LoggerKitWatch;
 			productReference = AA912BE01EE96C56002DD639 /* LoggerKit.framework */;
 			productType = "com.apple.product-type.framework";
@@ -517,6 +522,11 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		AA6288A024320C16003B8F65 /* Rainbow */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AA62889F24320C16003B8F65 /* XCRemoteSwiftPackageReference "Rainbow" */;
+			productName = Rainbow;
+		};
+		AAF42AE7244D14F2008F2603 /* Rainbow */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = AA62889F24320C16003B8F65 /* XCRemoteSwiftPackageReference "Rainbow" */;
 			productName = Rainbow;
