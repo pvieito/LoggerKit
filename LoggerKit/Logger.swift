@@ -12,7 +12,7 @@ import Rainbow
 /// Main class of LoggerKit. It allows you to log actions and description with different log levels.
 public class Logger {
     // MARK: Log Level
-
+    
     /// Possible levels of the log.
     public enum LogLevel: Int, Comparable, CaseIterable {
         case silence = 0
@@ -25,12 +25,12 @@ public class Logger {
         case info
         case verbose
         case debug
-
+        
         public static func < (a: LogLevel, b: LogLevel) -> Bool {
             return a.rawValue < b.rawValue
         }
     }
-
+    
     /// Log level of the Logger.
     ///
     /// The Logger will only log messages with a level equal or higher than this.
@@ -43,7 +43,7 @@ public class Logger {
 
 extension Logger {
     // MARK: Log Mode
-
+    
     /// Possible modes to log.
     ///
     /// - logger: The messages are sended to the System Log and printed with a timestamp in the Standard Error.
@@ -53,118 +53,160 @@ extension Logger {
         case commandLine
         case customLogger((String) -> ())
     }
-
+    
     /// The mode of the Logger.
     public static var logMode: LogMode = .logger
 }
 
 extension Logger {
-    // MARK: Log Functions
-
+    // MARK: Private Log Functions
+    static let extendedLogEnvironmentVariableName = "LOGGERKIT_EXTENDED_LOG"
+    
+    static var isExtendedLogEnabled: Bool {
+        return ProcessInfo.processInfo.environment[Self.extendedLogEnvironmentVariableName] != nil
+    }
+    
     /// Private general log function. The rest of Log functions should call this one.
-    private static func log(_ message: CustomStringConvertible) {
+    private static func log(
+        _ message: CustomStringConvertible,
+        _file: String = #file, _function: String = #function, _line: Int = #line) {
         switch Logger.logMode {
         case .logger:
-            NSLog(message.description)
+            var escapedMessage = message.description.replacingOccurrences(of: "%", with: "%%")
+            if Self.isExtendedLogEnabled {
+                escapedMessage += "\n\(_file):\(_line) @ \(_function)"
+            }
+            NSLog(escapedMessage)
         case .commandLine:
-            log(message, to: FileHandle.standardError)
+            log(message)
         case .customLogger(let customHandler):
             customHandler(message.description)
         }
     }
     
-    private static func log(_ message: CustomStringConvertible, to fileHandle: FileHandle) {
+    private static func log(_ message: CustomStringConvertible, to fileHandle: FileHandle? = nil) {
+        let fileHandle = fileHandle ?? .standardError
         let messageData = Data((message.description + "\n").utf8)
         fileHandle.write(messageData)
     }
+}
+
+extension Logger {
+    // MARK: Log Functions
     
     /// Log message in Error level and terminate the process.
-    public static func log(fatalError: CustomStringConvertible) -> Never {
-        log(error: fatalError)
+    public static func log(
+        fatalError: CustomStringConvertible,
+        _file: String = #file, _function: String = #function, _line: Int = #line) -> Never {
+        log(error: fatalError, _file: _file, _function: _function, _line: _line)
         exit(1)
     }
     
     /// Convenience function to log an Error in Error level and terminate the process.
-    public static func log(fatalError error: Error) -> Never {
-        log(fatalError: error.localizedDescription)
+    public static func log(
+        fatalError error: Error,
+        _file: String = #file, _function: String = #function, _line: Int = #line) -> Never {
+        log(fatalError: error.localizedDescription, _file: _file, _function: _function, _line: _line)
     }
-
+    
     /// Log message in Error level.
-    public static func log(error message: CustomStringConvertible) {
+    public static func log(
+        error message: CustomStringConvertible,
+        _file: String = #file, _function: String = #function, _line: Int = #line) {
         if logLevel >= .error {
-            log("[x] \(message)".red)
+            log("[x] \(message)".red, _file: _file, _function: _function, _line: _line)
         }
     }
     
     /// Convenience function to log an Error in Error level.
-    public static func log(error: Error) {
-        log(error: error.localizedDescription)
+    public static func log(
+        error: Error,
+        _file: String = #file, _function: String = #function, _line: Int = #line) {
+        log(error: error.localizedDescription, _file: _file, _function: _function, _line: _line)
     }
-
+    
     /// Log message in Warning level.
-    public static func log(warning message: CustomStringConvertible) {
+    public static func log(
+        warning message: CustomStringConvertible,
+        _file: String = #file, _function: String = #function, _line: Int = #line) {
         if logLevel >= .warning {
-            log("[!] \(message)".yellow)
+            log("[!] \(message)".yellow, _file: _file, _function: _function, _line: _line)
         }
     }
-
+    
     /// Convenience function to log an Error in Warning level.
-    public static func log(warning error: Error) {
-        log(warning: error.localizedDescription)
+    public static func log(
+        warning error: Error,
+        _file: String = #file, _function: String = #function, _line: Int = #line) {
+        log(warning: error.localizedDescription, _file: _file, _function: _function, _line: _line)
     }
-
+    
     /// Log description in Important level.
-    public static func log(important message: CustomStringConvertible) {
+    public static func log(
+        important message: CustomStringConvertible,
+        _file: String = #file, _function: String = #function, _line: Int = #line) {
         if logLevel >= .important {
-            log("[*] \(message)".bold)
+            log("[*] \(message)".bold, _file: _file, _function: _function, _line: _line)
         }
     }
-
+    
     /// Log description in Notice level.
-    public static func log(notice message: CustomStringConvertible) {
+    public static func log(
+        notice message: CustomStringConvertible,
+        _file: String = #file, _function: String = #function, _line: Int = #line) {
         if logLevel >= .notice {
-            log("[!] \(message)")
+            log("[!] \(message)", _file: _file, _function: _function, _line: _line)
         }
     }
-
+    
     /// Log description in Success level.
-    public static func log(success message: CustomStringConvertible) {
+    public static func log(
+        success message: CustomStringConvertible,
+        _file: String = #file, _function: String = #function, _line: Int = #line) {
         if logLevel >= .success {
-            log("[*] \(message)".green)
+            log("[*] \(message)".green, _file: _file, _function: _function, _line: _line)
         }
     }
     
     /// Log description in Info level.
-    public static func log(action message: CustomStringConvertible) {
+    public static func log(
+        action message: CustomStringConvertible,
+        _file: String = #file, _function: String = #function, _line: Int = #line) {
         if logLevel >= .action {
-            log("[*] \(message)")
+            log("[*] \(message)", _file: _file, _function: _function, _line: _line)
         }
     }
-
+    
     /// Log description in Info level.
-    public static func log(info message: CustomStringConvertible) {
+    public static func log(
+        info message: CustomStringConvertible,
+        _file: String = #file, _function: String = #function, _line: Int = #line) {
         if logLevel >= .info {
-            log("[ ] \(message)".white)
+            log("[ ] \(message)".white, _file: _file, _function: _function, _line: _line)
         }
     }
-
+    
     /// Log description in Verbose level.
-    public static func log(verbose message: CustomStringConvertible) {
+    public static func log(
+        verbose message: CustomStringConvertible,
+        _file: String = #file, _function: String = #function, _line: Int = #line) {
         if logLevel >= .verbose {
-            log("[ ] \(message)".white)
+            log("[ ] \(message)".white, _file: _file, _function: _function, _line: _line)
         }
     }
-
+    
     /// Log description in Debug level.
-    public static func log(debug message: CustomStringConvertible) {
+    public static func log(
+        debug message: CustomStringConvertible,
+        _file: String = #file, _function: String = #function, _line: Int = #line) {
         if logLevel >= .debug {
-            log("[>] \(message)".white)
+            log("[>] \(message)".white, _file: _file, _function: _function, _line: _line)
         }
     }
 }
 
 extension Logger {
-    /// Log empty line.
+    @available(*, deprecated)
     public static func logEmptyLine() {
         if logLevel >= .error {
             log("")
@@ -197,7 +239,6 @@ extension Logger {
     ///   - key: Specific part of the domain of the action.
     ///   - data: Data transferred during the action.
     public static func log(action mode: LogAction, domain: CustomStringConvertible, key: CustomStringConvertible, data: CustomStringConvertible? = nil) {
-        
         switch mode {
         case .read:
             log(debug: "\(domain).\(key) -> \(data ?? "--")")
