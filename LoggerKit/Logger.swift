@@ -26,8 +26,8 @@ public class Logger {
         case verbose
         case debug
         
-        public static func < (a: LogLevel, b: LogLevel) -> Bool {
-            return a.rawValue < b.rawValue
+        public static func < (lhs: LogLevel, rhs: LogLevel) -> Bool {
+            return lhs.rawValue < rhs.rawValue
         }
     }
     
@@ -78,7 +78,7 @@ extension Logger {
             }
             NSLog(escapedMessage)
         case .commandLine:
-            log(message)
+            self.log(message)
         case .customLogger(let customHandler):
             customHandler(message.description)
         }
@@ -98,7 +98,7 @@ extension Logger {
     public static func log(
         fatalError: CustomStringConvertible,
         _file: String = #file, _function: String = #function, _line: Int = #line) -> Never {
-        log(error: fatalError, _file: _file, _function: _function, _line: _line)
+        self.log(error: fatalError, _file: _file, _function: _function, _line: _line)
         exit(1)
     }
     
@@ -106,15 +106,15 @@ extension Logger {
     public static func log(
         fatalError error: Error,
         _file: String = #file, _function: String = #function, _line: Int = #line) -> Never {
-        log(fatalError: error.localizedDescription, _file: _file, _function: _function, _line: _line)
+        self.log(fatalError: error.localizedDescription, _file: _file, _function: _function, _line: _line)
     }
     
     /// Log message in Error level.
     public static func log(
         error message: CustomStringConvertible,
         _file: String = #file, _function: String = #function, _line: Int = #line) {
-        if logLevel >= .error {
-            log("[x] \(message)".red, _file: _file, _function: _function, _line: _line)
+        if self.logLevel >= .error {
+            self.log("[x] \(message)".red, _file: _file, _function: _function, _line: _line)
         }
     }
     
@@ -122,15 +122,15 @@ extension Logger {
     public static func log(
         error: Error,
         _file: String = #file, _function: String = #function, _line: Int = #line) {
-        log(error: error.localizedDescription, _file: _file, _function: _function, _line: _line)
+        self.log(error: error.localizedDescription, _file: _file, _function: _function, _line: _line)
     }
     
     /// Log message in Warning level.
     public static func log(
         warning message: CustomStringConvertible,
         _file: String = #file, _function: String = #function, _line: Int = #line) {
-        if logLevel >= .warning {
-            log("[!] \(message)".yellow, _file: _file, _function: _function, _line: _line)
+        if self.logLevel >= .warning {
+            self.log("[!] \(message)".yellow, _file: _file, _function: _function, _line: _line)
         }
     }
     
@@ -138,15 +138,15 @@ extension Logger {
     public static func log(
         warning error: Error,
         _file: String = #file, _function: String = #function, _line: Int = #line) {
-        log(warning: error.localizedDescription, _file: _file, _function: _function, _line: _line)
+        self.log(warning: error.localizedDescription, _file: _file, _function: _function, _line: _line)
     }
     
     /// Log description in Important level.
     public static func log(
         important message: CustomStringConvertible,
         _file: String = #file, _function: String = #function, _line: Int = #line) {
-        if logLevel >= .important {
-            log("[*] \(message)".bold, _file: _file, _function: _function, _line: _line)
+        if self.logLevel >= .important {
+            self.log("[*] \(message)".bold, _file: _file, _function: _function, _line: _line)
         }
     }
     
@@ -154,8 +154,8 @@ extension Logger {
     public static func log(
         notice message: CustomStringConvertible,
         _file: String = #file, _function: String = #function, _line: Int = #line) {
-        if logLevel >= .notice {
-            log("[!] \(message)", _file: _file, _function: _function, _line: _line)
+        if self.logLevel >= .notice {
+            self.log("[!] \(message)", _file: _file, _function: _function, _line: _line)
         }
     }
     
@@ -163,8 +163,8 @@ extension Logger {
     public static func log(
         success message: CustomStringConvertible,
         _file: String = #file, _function: String = #function, _line: Int = #line) {
-        if logLevel >= .success {
-            log("[*] \(message)".green, _file: _file, _function: _function, _line: _line)
+        if self.logLevel >= .success {
+            self.log("[*] \(message)".green, _file: _file, _function: _function, _line: _line)
         }
     }
     
@@ -172,8 +172,8 @@ extension Logger {
     public static func log(
         action message: CustomStringConvertible,
         _file: String = #file, _function: String = #function, _line: Int = #line) {
-        if logLevel >= .action {
-            log("[*] \(message)", _file: _file, _function: _function, _line: _line)
+        if self.logLevel >= .action {
+            self.log("[*] \(message)", _file: _file, _function: _function, _line: _line)
         }
     }
     
@@ -181,8 +181,8 @@ extension Logger {
     public static func log(
         info message: CustomStringConvertible,
         _file: String = #file, _function: String = #function, _line: Int = #line) {
-        if logLevel >= .info {
-            log("[ ] \(message)".white, _file: _file, _function: _function, _line: _line)
+        if self.logLevel >= .info {
+            self.log("[ ] \(message)".white, _file: _file, _function: _function, _line: _line)
         }
     }
     
@@ -190,8 +190,8 @@ extension Logger {
     public static func log(
         verbose message: CustomStringConvertible,
         _file: String = #file, _function: String = #function, _line: Int = #line) {
-        if logLevel >= .verbose {
-            log("[ ] \(message)".white, _file: _file, _function: _function, _line: _line)
+        if self.logLevel >= .verbose {
+            self.log("[ ] \(message)".white, _file: _file, _function: _function, _line: _line)
         }
     }
     
@@ -199,8 +199,8 @@ extension Logger {
     public static func log(
         debug message: CustomStringConvertible,
         _file: String = #file, _function: String = #function, _line: Int = #line) {
-        if logLevel >= .debug {
-            log("[>] \(message)".white, _file: _file, _function: _function, _line: _line)
+        if self.logLevel >= .debug {
+            self.log("[>] \(message)".white, _file: _file, _function: _function, _line: _line)
         }
     }
 }
@@ -208,8 +208,8 @@ extension Logger {
 extension Logger {
     @available(*, deprecated)
     public static func logEmptyLine() {
-        if logLevel >= .error {
-            log("")
+        if self.logLevel >= .error {
+            self.log("")
         }
     }
 }
