@@ -11,7 +11,7 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(url: "https://github.com/onevcat/Rainbow", from: "3.0.0")
+        .package(url: "https://github.com/onevcat/Rainbow", .branch("pull/40/head"))
     ],
     targets: [
         .target(
