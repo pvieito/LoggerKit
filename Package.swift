@@ -11,7 +11,7 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(url: "https://github.com/onevcat/Rainbow", .branch("master"))
+        .package(url: "https://github.com/onevcat/Rainbow", from: "3.2.0")
     ],
     targets: [
         .target(
