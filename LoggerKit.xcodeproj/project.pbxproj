@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		AA4088F8259DD44E00C3C4E1 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABBD9A91E5761D000AE5B46 /* Logger.swift */; };
-		AA408972259DD52500C3C4E1 /* Rainbow in Frameworks */ = {isa = PBXBuildFile; productRef = AA408971259DD52500C3C4E1 /* Rainbow */; };
 		AA6288A124320C16003B8F65 /* Rainbow in Frameworks */ = {isa = PBXBuildFile; productRef = AA6288A024320C16003B8F65 /* Rainbow */; };
 		AA912BF61EE96C94002DD639 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABBD9A91E5761D000AE5B46 /* Logger.swift */; };
 		AABBD9C91E5761DA00AE5B46 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABBD9A91E5761D000AE5B46 /* Logger.swift */; };
@@ -16,7 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AA4088E7259DD42000C3C4E1 /* LoggerKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LoggerKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA4088E7259DD42000C3C4E1 /* LoggerKitMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LoggerKitMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA912BE01EE96C56002DD639 /* LoggerKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LoggerKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAA426C1225C01C900F7BC69 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		AABBD9A41E5761BD00AE5B46 /* LoggerKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LoggerKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -30,7 +29,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA408972259DD52500C3C4E1 /* Rainbow in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,7 +66,7 @@
 			children = (
 				AABBD9A41E5761BD00AE5B46 /* LoggerKit.framework */,
 				AA912BE01EE96C56002DD639 /* LoggerKit.framework */,
-				AA4088E7259DD42000C3C4E1 /* LoggerKit.framework */,
+				AA4088E7259DD42000C3C4E1 /* LoggerKitMac.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -132,10 +130,9 @@
 			);
 			name = LoggerKitMac;
 			packageProductDependencies = (
-				AA408971259DD52500C3C4E1 /* Rainbow */,
 			);
 			productName = LoggerKitMac;
-			productReference = AA4088E7259DD42000C3C4E1 /* LoggerKit.framework */;
+			productReference = AA4088E7259DD42000C3C4E1 /* LoggerKitMac.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		AA912BDF1EE96C56002DD639 /* LoggerKitWatch */ = {
@@ -306,7 +303,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.pvieito.LoggerKit;
-				PRODUCT_NAME = LoggerKit;
+				PRODUCT_NAME = LoggerKitMac;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -339,7 +336,7 @@
 				MARKETING_VERSION = 1.0;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.pvieito.LoggerKit;
-				PRODUCT_NAME = LoggerKit;
+				PRODUCT_NAME = LoggerKitMac;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -658,11 +655,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		AA408971259DD52500C3C4E1 /* Rainbow */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = AA62889F24320C16003B8F65 /* XCRemoteSwiftPackageReference "Rainbow" */;
-			productName = Rainbow;
-		};
 		AA6288A024320C16003B8F65 /* Rainbow */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = AA62889F24320C16003B8F65 /* XCRemoteSwiftPackageReference "Rainbow" */;

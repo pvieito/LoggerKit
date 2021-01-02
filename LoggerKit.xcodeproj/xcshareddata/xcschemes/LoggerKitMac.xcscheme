@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "AA4088E6259DD42000C3C4E1"
-               BuildableName = "LoggerKit.framework"
+               BuildableName = "LoggerKitMac.framework"
                BlueprintName = "LoggerKitMac"
                ReferencedContainer = "container:LoggerKit.xcodeproj">
             </BuildableReference>
@@ -51,7 +51,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AA4088E6259DD42000C3C4E1"
-            BuildableName = "LoggerKit.framework"
+            BuildableName = "LoggerKitMac.framework"
             BlueprintName = "LoggerKitMac"
             ReferencedContainer = "container:LoggerKit.xcodeproj">
          </BuildableReference>

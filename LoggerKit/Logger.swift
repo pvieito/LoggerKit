@@ -7,7 +7,10 @@
 //
 
 import Foundation
+
+#if canImport(Rainbow)
 import Rainbow
+#endif
 
 /// Main class of LoggerKit. It allows you to log actions and description with different log levels.
 public class Logger {
@@ -251,3 +254,13 @@ extension Logger {
         }
     }
 }
+
+#if !canImport(Rainbow)
+extension String {
+    var green: String { self }
+    var red: String { self }
+    var bold: String { self }
+    var white: String { self }
+    var yellow: String { self }
+}
+#endif
