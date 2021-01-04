@@ -209,6 +209,19 @@ extension Logger {
 }
 
 extension Logger {
+    public static func log(
+        condition: Bool, message: CustomStringConvertible,
+        _file: String = #file, _function: String = #function, _line: Int = #line) {
+        if condition {
+            self.log(success: message, _file: _file, _function: _function, _line: _line)
+        }
+        else {
+            self.log(warning: message, _file: _file, _function: _function, _line: _line)
+        }
+    }
+}
+
+extension Logger {
     @available(*, deprecated)
     public static func logEmptyLine() {
         if self.logLevel >= .error {
