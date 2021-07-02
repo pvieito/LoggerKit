@@ -8,7 +8,11 @@ let package = Package(
         .library(
             name: "LoggerKit",
             targets: ["LoggerKit"]
-        )
+        ),
+        .library(
+            name: "LoggerKitMac",
+            targets: ["LoggerKitMac"]
+        ),
     ],
     dependencies: [
         .package(url: "https://github.com/onevcat/Rainbow", from: "3.2.0")
@@ -18,6 +22,11 @@ let package = Package(
             name: "LoggerKit",
             dependencies: ["Rainbow"],
             path: "LoggerKit"
+        ),
+        .target(
+            name: "LoggerKitMac",
+            dependencies: ["Rainbow"],
+            path: "LoggerKitMac"
         ),
         .testTarget(
             name: "LoggerKitTests",
