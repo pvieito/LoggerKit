@@ -1,9 +1,15 @@
-// swift-tools-version:5.0
+// swift-tools-version:5.3
 
 import PackageDescription
 
 let package = Package(
     name: "LoggerKit",
+    platforms: [
+        .macOS("10.13"),
+        .iOS("13.0"),
+        .tvOS("13.0"),
+        .watchOS("9.0"),
+    ],
     products: [
         .library(
             name: "LoggerKit",
@@ -20,7 +26,9 @@ let package = Package(
     targets: [
         .target(
             name: "LoggerKit",
-            dependencies: ["Rainbow"],
+            dependencies: [
+                .product(name: "Rainbow", package: "Rainbow", condition: .when(platforms: [.macOS, .iOS, .tvOS]))
+            ],
             path: "LoggerKit"
         ),
         .target(
