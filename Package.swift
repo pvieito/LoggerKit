@@ -20,22 +20,16 @@ let package = Package(
             targets: ["LoggerKitMac"]
         ),
     ],
-    dependencies: [
-        .package(url: "https://github.com/onevcat/Rainbow", from: "4.0.0")
-    ],
+    dependencies: [],
     targets: [
         .target(
             name: "LoggerKit",
-            dependencies: [
-                .product(name: "Rainbow", package: "Rainbow", condition: .when(platforms: [.macOS, .iOS, .tvOS]))
-            ],
+            dependencies: [],
             path: "LoggerKit"
         ),
         .target(
             name: "LoggerKitMac",
-            dependencies: [
-                .product(name: "Rainbow", package: "Rainbow", condition: .when(platforms: [.macOS]))
-            ],
+            dependencies: ["LoggerKit"],
             path: "LoggerKitMac"
         ),
         .testTarget(

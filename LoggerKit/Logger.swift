@@ -8,10 +8,6 @@
 
 import Foundation
 
-#if canImport(Rainbow) && !os(watchOS)
-import Rainbow
-#endif
-
 /// Main class of LoggerKit. It allows you to log actions and description with different log levels.
 public class Logger {
     // MARK: Log Level
@@ -278,12 +274,25 @@ extension Logger {
     }
 }
 
-#if !canImport(Rainbow) || os(watchOS)
-extension String {
+private extension String {
+    #if os(macOS)
+    var green: String { self.ansiStyled("32") }
+    var red: String { self.ansiStyled("31") }
+    var bold: String { self.ansiStyled("1") }
+    var white: String { self.ansiStyled("37") }
+    var yellow: String { self.ansiStyled("33") }
+
+    func ansiStyled(_ code: String) -> String {
+        guard case .commandLine = Logger.logMode else {
+            return self
+        }
+        return "\u{001B}[\(code)m\(self)\u{001B}[0m"
+    }
+    #else
     var green: String { self }
     var red: String { self }
     var bold: String { self }
     var white: String { self }
     var yellow: String { self }
+    #endif
 }
-#endif
