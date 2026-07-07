@@ -8,7 +8,7 @@
 
 import Foundation
 
-#if canImport(Rainbow)
+#if canImport(Rainbow) && !os(watchOS)
 import Rainbow
 #endif
 
@@ -278,7 +278,7 @@ extension Logger {
     }
 }
 
-#if !canImport(Rainbow)
+#if !canImport(Rainbow) || os(watchOS)
 extension String {
     var green: String { self }
     var red: String { self }

@@ -33,6 +33,9 @@ let package = Package(
         ),
         .target(
             name: "LoggerKitMac",
+            dependencies: [
+                .product(name: "Rainbow", package: "Rainbow", condition: .when(platforms: [.macOS]))
+            ],
             path: "LoggerKitMac"
         ),
         .testTarget(
