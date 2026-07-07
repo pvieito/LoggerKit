@@ -29,7 +29,6 @@ let package = Package(
         ),
         .target(
             name: "LoggerKitMac",
-            dependencies: ["LoggerKit"],
             path: "LoggerKitMac"
         ),
         .testTarget(
